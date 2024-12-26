@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth focus:scroll-auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" />
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smartphone" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4226f4145e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        :root {
+            --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+            --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+            --text-gradient-yellow: linear-gradient(
+                to right, 
+                hsl(45, 100%, 72%), 
+                hsl(35, 100%, 68%)
+            );
+            --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+            --jet: hsl(0, 0%, 22%);
+            --onyx: hsl(240, 1%, 17%);
+            --eerie-black-1: hsl(240, 2%, 13%);
+            --eerie-black-2: #1e1e1f;
+            --smoky-black: #121212;
+            --white-1: hsl(0, 0%, 100%);
+            --white-2: hsl(0, 0%, 98%);
+            --orange-yellow-crayola: #ffdb70;
+            --vegas-gold: hsl(45, 54%, 58%);
+            --light-gray: hsl(0, 0%, 84%);
+            --light-gray-70: hsla(0, 0%, 84%, 0.7);
+            --bittersweet-shimmer: hsl(0, 43%, 51%);
+            --ff-poppins: 'Poppins', sans-serif;
+            --fs-1: 24px;
+            --fs-2: 18px;
+            --fs-3: 17px;
+            --fs-4: 16px;
+            --fs-5: 15px;
+            --fs-6: 14px;
+            --fs-7: 13px;
+            --fs-8: 11px;
+            --fw-300: 300;
+            --fw-400: 400;
+            --fw-500: 500;
+            --fw-600: 600;
+            --shadow-1: -4px 8px 24px #00000020;
+        }
+        body {
+            background: var(--smoky-black);
+            font-family: var(--ff-poppins);
+        }
+        .sidebar {
+            background: var(--eerie-black-2);
+            border: 1px solid var(--jet);
+            border-radius: 30px;
+            color: white;
+            padding: 1rem;
+            position: sticky; 
+            top: 15px; 
+            overflow-y: auto; 
+        }
+        .sidebar .name {
+            color: var(--white-2);
+            font-size: 30px;
+            font-weight: var(--fw-500);
+            letter-spacing: -0.25px;
+        }
+        .sidebar .title {
+            color: var(--orange-yellow-crayola);
+            background: var(--onyx);
+            font-size: var(--fs-6);
+            font-weight: var(--fw-300);
+            width: max-content;
+            padding: 3px 12px;
+            border-radius: 8px;
+        } 
+        .contact-title{
+            color: var(--light-gray-70);
+            font-size: var(--fs-7);
+            text-transform: uppercase;
+        }
+        .contact-info{
+            font-size: var(--fs-6);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .sidebar .media i {
+            font-size: var(--fs-3);
+            color: var(--orange-yellow-crayola);
+        }
+        .profile-image {
+            border-radius: 35px;
+            background: var(--bg-gradient-onyx);
+            width: 150px; /* Set a smaller width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .profile-image-res {
+            border-radius: 20px;
+            background: var(--bg-gradient-onyx);
+            width: 100px; /* Set a smaller width for the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .main-content {
+            background: var(--eerie-black-2);
+            border: 1px solid var(--jet);
+            border-radius: 30px;
+            color: white;
+            padding: 1rem;
+        }
+        .main-content  h1 {
+            font-size: var(--fs-1);
+            font-weight: var(--fw-600);
+        }
+        .main-content .about p {
+            font-weight:var(--fw-300);
+            color: var(--light-gray);
+        }
+       .nav{
+        background: var(--eerie-black-2);
+        border-radius: 10px;
+        font-weight: 500;
+        position: sticky;
+        top: 30px;
+        z-index: 100;
+        box-shadow: 2px 3px 4px 5px rgba(0, 0, 0, 0.735);
+       }
+       .nav a {
+        background: var();
+        color: var(--white-2);
+       }
+       .nav a:focus{
+        background: rgba(55, 55, 55, 0.798);
+        border-radius: 10px;
+       }
+       .nav a:hover{
+        color: var(--orange-yellow-crayola) !important;
+       }
+       .icon-box{
+            
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: var(--orange-yellow-crayola);
+            border-radius: 8px;
+            background: linear-gradient(145deg, #1b1b1c, #202021); 
+            box-shadow:  2px 2px 2px #151516,
+             -1px -1px 2px #272728;
+        }
+       .timeline {
+            position: relative;
+            margin: auto;
+            padding-left: 20px; /* Space for the line */
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+        }
+        .timeline-icon {
+            background-color: var(--bg-gradient-jet);
+            color: white;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            position: absolute;
+            left: -20px;
+            z-index: 1;
+        }
+
+        .nested-timeline {
+            margin-top: 20px;
+            padding-left: 0px; /* Indent for nested items */
+            position: relative;
+        }
+
+        .nested-timeline-item {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .nested-timeline-icon {
+            background-color: var(--jet);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            position: absolute;
+            left: -10px; /* Align with the main line */
+            z-index: 1;
+        }
+        .nested-timeline-icon .icon-fr{
+            width: 10px;
+            height: 10px;
+            background: var(--text-gradient-yellow);
+            border-radius: 50%;
+        }
+        .nested-timeline-content, .timeline-content .heading {
+            border-radius: 5px;
+            margin-left: 50px;
+            padding: 0px;
+            width: calc(100% - 40px); /* Adjust width to account for icon */
+        }
+
+        /* Line connecting the timeline items */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 0;
+            width: 1px;
+            z-index: 0;
+            background: var(--jet);
+            border-radius: 30px;
+        }
+        .cv{
+            background: var(--bg-gradient-onyx);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .h3{
+            font-size: var(--fs-1);
+            line-height: 2;
+            font-weight: var(--fw-600);
+        }
+        .h4{
+            font-size: var(--fs-4);
+        }
+        .time-title {
+            color: var(--vegas-gold);
+            font-weight: var(--fw-300);
+            line-height: 1.6;
+        }
+        
+        @media only screen and (max-width: 1000px) 
+        {
+            .sidebar .name{
+                font-size: 17px;
+            }
+            .sidebar .title{
+                border-radius: 5px;
+                font-size: 8px;
+            }
+            .nested-timeline-item {
+            position: relative;
+            margin-top: 35px;
+            }
+            .h3 {
+                font-size: (var(--fs-8));
+            }
+            .h4 {
+                font-size: var(--fs-5);
+            }
+            .time-title {
+            color: var(--vegas-gold);
+            font-weight: var(--fw-300);
+            line-height: 1.6;
+            font-size: var(--fs-6);
+            }
+            .icon-box{
+                width: 30px;
+                height: 30px;
+                font-size: 15px;
+                border-radius: 8px;
+                background: linear-gradient(145deg, #1b1b1c, #202021); 
+                box-shadow:  2px 2px 2px #151516,
+                -1px -1px 2px #272728;
+            }
+            .nav{
+                position: sticky;
+                top: 30px;
+                z-index: 900;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4 pb-5">  
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-lg-2"> <!-- Reduced column size -->
+                <div class="custom-class sidebar position-sticky  overflow-hidden">
+                    <div class="text-center">
+                        <div class="my-info text-center">
+                            <div class="row">
+                                <!--For Mobile-->
+                                <div class="col d-flex d-md-none text-center">
+                                    <img src="https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png" alt="Rodrio" class="profile-image-res ">
+                                     <div class="ms-auto d-flex flex-column align-items-center justify-content-center">
+                                        <h2 class="name mt-1">Naveen T H</h2>
+                                        <p class="title mt-1">Web developer</p>
+                                        <div class="media mt-2">
+                                            <div class="d-flex">
+                                                <div class="icon-box mx-2">
+                                                    <a href="https://github.com/Naveen-Th">
+                                                    <i class="fa-brands fa-github"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="icon-box">
+                                                    <a href="https://www.linkedin.com/in/naveenth/"><i class="fa-brands fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--desktop screen-->
+                                <div class="col-12 d-none d-md-flex justify-content-center mt-4 ">
+                                    <img src="https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png" alt="Rodrio" class="profile-image"/>
+                                </div>
+                            </div>
+                            <div class="col-12 me-5 d-flex flex-column align-items-center">
+                                <h1 class="name  mt-md-4 d-none d-md-block ">Naveen T H</h1>
+                                <p class="title  mt-md-4 d-none d-md-block">Web developer</p>
+                            </div>
+                        </div>
+                        
+                        <hr class="hr hr-blurry d-none d-md-block m-0 m-md-4" />
+                        <!--Social-->
+                        <div class="social mt-4  d-flex text-start d-none d-md-flex p-2">
+                            <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+                            <div class="d-flex flex-column ms-3">
+                                <p class="contact-title">Email</p>
+                                <a href="#" class="contact-info">navi@gmail.com</a>
+                            </div>
+                        </div>
+
+
+                            <div class="social mt-4  d-flex text-start d-none d-md-flex p-2">
+                                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                                <div class="d-flex flex-column ms-3">
+                                    <p class="contact-title">Phone</p>
+                                    <p class="contact-info">+91 6362214161</p>
+                                </div>
+                            </div>
+
+                            <div class="social mt-4 mb-4 d-flex text-start d-none d-md-flex p-2">
+                                <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="d-flex flex-column ms-3">
+                                    <p class="contact-title">Location</p>
+                                    <p class="contact-info">Bangalore</p>
+                                </div>
+                            </div>
+                            <div class="media mt-5 text-start d-none d-md-flex justify-content-center">
+                                <div class="icon-box mx-2">
+                                    <a href="https://github.com/Naveen-Th" class="">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                                <div class="icon-box mx-2">
+                                    <a href="https://www.linkedin.com/in/naveenth/">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        <!--End Social-->
+                        <div class="cv mt-4">
+                            <button>Download CV</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 mt-3 mt-md-0">
+                <div class="card main-content">
+                    <div class="p-0 p-md-3">
+                        <!--tab content-->
+                        <ul class="nav" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-mdb-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-mdb-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Resume</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-mdb-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active about" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h1 class="mt-4">About Me</h1>
+                                <p class="mt-3">
+                                Hello! I’m Naveen T H, a passionate web developer based in Tumkur. With a strong foundation in both front-end  technologies, I specialize in creating dynamic, user-friendly websites and applications that not only look great but also provide seamless user experiences.
+                                </p>
+                                <p class="mt-3">
+                                My journey into web development began when I built my first website as a hobby in College. Since then, I have honed my skills through [mention any relevant education, bootcamps, or self-study], and I am constantly seeking to learn and grow in this ever-evolving field.
+                            </p>
+                                <p class="mt-3">
+                                I am proficient in a variety of programming languages and frameworks, including HTML, CSS, JavaScript, React, and Node.js. I enjoy tackling complex problems and finding innovative solutions, whether it’s optimizing performance, enhancing user interfaces, or integrating APIs.
+                                <p>
+                                In addition to my technical skills, I believe that effective communication and collaboration are key to successful projects. I thrive in team environments and enjoy working closely with designers, product managers, and other developers to bring ideas to life.
+                            </p>
+                            <p>
+                                When I’m not coding, you can find me [insert a personal touch, e.g., "exploring new coffee shops, hiking, or contributing to open-source projects"]. I’m always eager to connect with fellow developers and share knowledge, so feel free to reach out!
+                            </p>
+                                <p>
+                                Thank you for visiting my portfolio. I look forward to the opportunity to work together and create something amazing!
+                                </p>
+                                
+                            </div>
+
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            
+                            <!-- Section: Timeline -->
+                            <h1 class="h3 mt-4">Resume</h1>
+                            <div class="timeline">
+
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <div class="icon-box">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="heading">
+                                        <h3 class="h3 item-title">Education</h3></div>
+                                        <div class="nested-timeline">
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">Shree Siddaganga College Of Arts,Science & Commerce</h4>
+                                                    <p class="time-title">2020-2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">Mahesh Pre University College</h4>
+                                                    <p class="time-title">2017 — 2019</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <div class="icon-box">
+                                            <i class="fa-brands fa-leanpub"></i> 
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="heading">
+                                        <h3 class="h3 item-title">Certificates</h3></div>
+                                        <div class="nested-timeline">
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">JavaScript Intermediate</h4>
+                                                    <p class="time-title">HackerRank <i class="fa-solid fa-link ms-2"></i></p>
+                                                </div>
+                                            </div>
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">React Basic</h4>
+                                                    <p class="time-title">HackerRank <i class="fa-solid fa-link ms-2"></i></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <div class="icon-box">
+                                            <i class="fa-solid fa-folder"></i> 
+                                        </div>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="heading">
+                                        <h3 class="h3 item-title">Projects</h3></div>
+                                        <div class="nested-timeline">
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">Eat & Split Bill</h4>
+                                                    <p class="time-title">React Js</p>
+                                                </div>
+                                            </div>
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">Movies Fetch</h4>
+                                                    <p class="time-title">JavaScript & React Js</p>
+                                                </div>
+                                            </div>
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">Tip Calculator</h4>
+                                                    <p class="time-title">React Js</p>
+                                                </div>
+                                            </div>
+                                            <div class="nested-timeline-item">
+                                                <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
+                                                <div class="nested-timeline-content">
+                                                    <h4 class="h4">TodoList</h4>
+                                                    <p class="time-title">JavaScript</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- Section: Timeline -->
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact content</div>
+                        </div>
+                        <!--Tab content-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+    <script src="https://kit.fontawesome.com/4226f4145e.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
