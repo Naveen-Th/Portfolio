@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth focus:scroll-auto">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" />
+    <link href="style.css" />
     <title>Naveen TH</title>
-
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=smartphone" />
 
@@ -126,10 +126,9 @@
         }
        .nav{
         background: var(--eerie-black-2);
-        border-radius: 10px;
         font-weight: 500;
         position: sticky;
-        top: 30px;
+        top: 3px;
         z-index: 100;
         box-shadow: 2px 3px 4px 5px var(--eerie-black-2);
        }
@@ -250,15 +249,46 @@
             font-weight: var(--fw-300);
             line-height: 1.6;
         }
-        
-        @media only screen and (max-width: 1000px) 
+        @media (max-width: 600px) { 
+            .icon-box{
+                width: 50px !important;
+                height: 40px;
+            }
+        }
+        @media (min-width: 1300px) and (max-width: 1530px) {
+            .sidebar {
+                width: 200px;
+            }
+            .sidebar .name{
+                font-size: 17px;
+            }
+            .sidebar .title{
+                border-radius: 5px;
+                font-size: 10px;
+            }
+            .main-content{
+                margin-left: 1rem;
+            }
+            .social .mail {
+                width: 100px;
+            }
+        }
+        @media (min-width: 1000px) and (max-width: 1290px) {
+            .sidebar {
+                width: 180px;
+            }
+            .main-content{
+                margin-left: 2rem;
+            }
+        }
+        @media only screen and (max-width: 1300px) 
         {
             .sidebar .name{
                 font-size: 17px;
             }
             .sidebar .title{
                 border-radius: 5px;
-                font-size: 8px;
+                font-size: 10px;
             }
             .nested-timeline-item {
             position: relative;
@@ -268,7 +298,7 @@
                 font-size: (var(--fs-3));
             }
             .h4 {
-                font-size: var(--fs-8);
+                font-size: var(--fs-7);
             }
             .time-title {
             color: var(--vegas-gold);
@@ -292,7 +322,14 @@
                 z-index: 900;
                 transition: all 3s ease-in;
             }
+            .cv{
+                font-size: 12px;
+            }
+            .social .mail {
+                width: 100px;
+            }
         }
+        /* Loader */
         .loading {
             display: flex;
             align-items: center;
@@ -309,14 +346,52 @@
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
+        .nested-timeline-content a:hover {
+            border-radius: 10px;
+            padding: 5px;
+            background: var(--jet) !important;
+            color: rgb(255, 255, 255) !important;
+        }
+        .form input{
+            padding: 10px 20px;
+            color: var(--light-gray);
+            background: var(--bg-gradient-jet);
+            border: 1px solid var(--jet);
+            border-radius: 10px;
+        }
+        .form input::placeholder{
+            font-weight: var(--fw-500);
+        }
+        .form input:focus{
+            outline: none;
+            border: 1px solid var(--bittersweet-shimmer);
+        }
+        textarea{
+            border-radius: 10px;
+            background: var(--bg-gradient-jet);
+            border: 1px solid var(--jet);
+            height: 10rem;
+        }
+        textarea:focus{
+            outline: none;
+            border: 1px solid var(--bittersweet-shimmer);
+        }
+        @media (max-width: 558px) { 
+            .in-name{
+                grid-column: span 12;
+            }
+            .in-email{
+                grid-column:span 12;
+            }
+         }
     </style>
 </head>
 <body>
     <div class="loading">
-        <dotlottie-player src="https://lottie.host/66a9cbbd-c30b-4b0b-8481-0cfb4b331693/BVpAsSwEKj.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+      <dotlottie-player src="https://lottie.host/66a9cbbd-c30b-4b0b-8481-0cfb4b331693/BVpAsSwEKj.lottie " background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player> 
     </div>
-    <div class="container mt-4 pb-5" id="content" style="display: none;">  
-        <div class="row justify-content-center">
+    <div class="container mt-4 pb-5" id="content" style="display: none;"> 
+        <div class="row justify-content-center" >
             <div class="col-md-3 col-lg-2"> <!-- Reduced column size -->
                 <div class="custom-class sidebar position-sticky  overflow-hidden">
                     <div class="text-center">
@@ -355,52 +430,54 @@
                         
                         <hr class="hr hr-blurry d-none d-md-block m-0 m-md-4" />
                         <!--Social-->
-                        <div class="social mt-4  d-flex text-start d-none d-md-flex p-2">
-                            <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
-                            <div class="d-flex flex-column ms-3">
-                                <p class="contact-title">Email</p>
-                                <a href="#" class="contact-info">navi@gmail.com</a>
-                            </div>
-                        </div>
-
-
                             <div class="social mt-4  d-flex text-start d-none d-md-flex p-2">
+                                <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+                                <div class="d-flex flex-column ms-3">
+                                    <p class="contact-title">Email</p>
+                                    <a href="#" class="contact-info mail">navi@gmail.com</a>
+                                </div>
+                            </div>
+
+
+                            <div class="social mt-4  d-flex text-start d-none d-md-flex  p-2">
                                 <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
                                 <div class="d-flex flex-column ms-3">
                                     <p class="contact-title">Phone</p>
-                                    <p class="contact-info">+91 6362214161</p>
-                                </div>
+                                    <p class="contact-info mail">+91 6362214161</p>
+                                    </div>
                             </div>
 
-                            <div class="social mt-4 mb-4 d-flex text-start d-none d-md-flex p-2">
+                            <div class="social mt-4 mb-4 text-start d-none d-md-flex p-2">
                                 <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
                                 <div class="d-flex flex-column ms-3">
                                     <p class="contact-title">Location</p>
-                                    <p class="contact-info">Bangalore</p>
+                                    <p class="contact-info mail">Bangalore</p>
                                 </div>
                             </div>
+
                             <div class="media mt-5 text-start d-none d-md-flex justify-content-center">
                                 <div class="icon-box mx-2">
-                                    <a href="https://github.com/Naveen-Th" class="">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                </div>
-                                <div class="icon-box mx-2">
-                                    <a href="https://www.linkedin.com/in/naveenth/">
-                                        <i class="fa-brands fa-linkedin"></i>
-                                    </a>
+                                        <a href="https://github.com/Naveen-Th" class="">
+                                            <i class="fa-brands fa-github"></i>
+                                        </a>
+                                    </div>
+                                    <div class="icon-box mx-2">
+                                        <a href="https://www.linkedin.com/in/naveenth/">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                        </a>
                                 </div>
                             </div>
+                        
                         <!--End Social-->
                         <div class="cv mt-4">
-                            <button>Download CV</button>
+                            <button><a href="https://drive.google.com/file/d/1EBt0EnA_E11moT0y6M-ywTc2SwuRb1_V/view?usp=sharing">Download CV</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-lg-8 mt-3 mt-md-0">
+            <div class="col-md-9 col-lg-7 mt-3 mt-md-0">
                 <div class="card main-content">
-                    <div class="p-0 p-md-3">
+                    <div class="p-md-3">
                         <!--tab content-->
                         <ul class="nav" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -413,35 +490,32 @@
                                 <a class="nav-link" id="contact-tab" data-mdb-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
                             </li>
                         </ul>
+                        <!--About content-->
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active about" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h1 class="mt-4">About Me</h1>
+                            <div class="tab-pane fade show active about" id="home" role="tabpanel"   aria-labelledby="home-tab" style="height: 40rem;">
+                                <h1 class="h3 mt-4">About Me</h1>
                                 <p class="mt-3">
-                                Hello! I’m Naveen T H, a passionate web developer based in Tumkur. With a strong foundation in both front-end  technologies, I specialize in creating dynamic, user-friendly websites and applications that not only look great but also provide seamless user experiences.
+                                    Proficient in HTML, CSS, JavaScript and React Js. Skilled in designing user-friendly interfaces, and integrating APIs.
                                 </p>
                                 <p class="mt-3">
-                                My journey into web development began when I built my first website as a hobby in College. Since then, I have honed my skills through [mention any relevant education, bootcamps, or self-study], and I am constantly seeking to learn and grow in this ever-evolving field.
+                                My journey into web development began when I built my first website as a hobby in College. Since then, I have honed my skills through self-study and attending bootcamps, and I am constantly seeking to learn and grow in this ever-evolving field.
                             </p>
                                 <p class="mt-3">
-                                I am proficient in a variety of programming languages and frameworks, including HTML, CSS, JavaScript, React, and Node.js. I enjoy tackling complex problems and finding innovative solutions, whether it’s optimizing performance, enhancing user interfaces, or integrating APIs.
+                                I am proficient in a variety of programming languages and frameworks, including HTML, CSS, JavaScript, and React.js.
                                 <p>
-                                In addition to my technical skills, I believe that effective communication and collaboration are key to successful projects. I thrive in team environments and enjoy working closely with designers, product managers, and other developers to bring ideas to life.
+                                In addition to my technical skills,I thrive in team environments and enjoy working closely with designers, product managers, and other developers to bring ideas to life.
                             </p>
-                            <p>
-                                When I’m not coding, you can find me [insert a personal touch, e.g., "exploring new coffee shops, hiking, or contributing to open-source projects"]. I’m always eager to connect with fellow developers and share knowledge, so feel free to reach out!
-                            </p>
-                                <p>
+                           
+                             <p class="mt-3">
                                 Thank you for visiting my portfolio. I look forward to the opportunity to work together and create something amazing!
                                 </p>
-                                
                             </div>
+                            <!--Ends About content-->
 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            
                             <!-- Section: Timeline -->
                             <h1 class="h3 mt-4">Resume</h1>
                             <div class="timeline">
-
                                 <div class="timeline-item">
                                     <div class="timeline-icon">
                                         <div class="icon-box">
@@ -484,14 +558,16 @@
                                                 <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
                                                 <div class="nested-timeline-content">
                                                     <h4 class="h4">JavaScript Intermediate</h4>
-                                                    <p class="time-title">HackerRank <i class="fa-solid fa-link ms-2"></i></p>
+                                                    <a href="https://www.hackerrank.com/certificates/3b11ffe583b4" class="time-title">
+                                                        HackerRank <i class="fa-solid fa-link ms-2"></i>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="nested-timeline-item">
                                                 <div class="nested-timeline-icon"><div class="icon-fr"></div></div>
                                                 <div class="nested-timeline-content">
                                                     <h4 class="h4">React Basic</h4>
-                                                    <p class="time-title">HackerRank <i class="fa-solid fa-link ms-2"></i></p>
+                                                    <a href="https://www.hackerrank.com/certificates/0e3c60b3424f" target="_blank" class="time-title"> HackerRank <i class="fa-solid fa-link ms-2"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -543,7 +619,22 @@
                             </div>
                             <!-- Section: Timeline -->
                             </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact content</div>
+                            <!--Contact-->
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" style="height: 40rem;">
+                                <h1 class="h3 mt-4">Contact</h1>
+                                <div id="map"></div>
+
+                                <div class="form" style="display: grid;grid-template-columns: repeat(2,1fr);gap: 1rem;">
+                                    <input class="in-name" type="text" placeholder="Full Name" required/>
+                                    <input class="in-email" type="email" placeholder="Email" required />
+                                </div>
+
+                                <textarea class="col-12 mt-3 p-2 p-md-4" placeholder="Comment" ></textarea>
+
+                                <div class="ms-auto  mt-4">
+                                    <a href="mailto:gowdanavi279@gmail.com" class="mt-3 p-3 rounded-3 col-12 col-md-3 "  style="background: var(--jet);">Send message</a> 
+                                </div>
+                            </div>
                         </div>
                         <!--Tab content-->
                     </div>
@@ -565,11 +656,14 @@
                 loadingElement.style.display = 'none';
                 
                 document.getElementById('content').style.display = 'block';
-            }, 1000); 
+            }, 400); 
         }
-        setTimeout(showContent, 3000); // 3000 milliseconds = 3 seconds
+        setTimeout(showContent,200); 
 
         document.body.style.display = 'block';
     </script>
+
+
+
 </body>
 </html>
